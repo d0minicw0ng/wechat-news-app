@@ -7,7 +7,6 @@
 
 .news-metadata {
   display: flex;
-  flex-direction: row;
   padding: 30rpx;
 }
 
@@ -26,7 +25,6 @@
 
 .news-read-count {
   display: flex;
-  flex-direction: row;
 }
 
 .new-read-count-left {

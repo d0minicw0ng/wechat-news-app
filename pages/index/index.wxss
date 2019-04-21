@@ -54,7 +54,6 @@
   bottom: 10rpx;
   padding: 30rpx;
   display: flex;
-  flex-direction: row;
   font-weight: 200;
   font-size: 30rpx;
 }
@@ -84,7 +83,6 @@
 .news-metadata {
   margin-top: 10rpx;
   display: flex;
-  flex-direction: row;
   font-weight: 200;
   font-size: 30rpx;
 }
