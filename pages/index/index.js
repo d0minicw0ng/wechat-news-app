@@ -18,7 +18,13 @@ Page({
     this.getNews();
   },
 
-  getNews() {
+  onPullDownRefresh() {
+    this.getNews(() => {
+      wx.stopPullDownRefresh();
+    });
+  },
+
+  getNews(callback) {
     wx.request({
       url: `https://test-miniprogram.com/api/news/list?type=${this.data.activeCategory}`,
       success: res => {
@@ -28,6 +34,8 @@ Page({
         });
         const hottestNews = news.splice(0, 1)[0];
         this.setData({ hottestNews, news });
+
+        callback && callback();
       }
     })
   },
