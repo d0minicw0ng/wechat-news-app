@@ -8,6 +8,7 @@
 .news-metadata {
   display: flex;
   padding: 30rpx;
+  flex-direction: space-between;
 }
 
 .news-source, .news-time, .news-read-count {
@@ -16,7 +17,7 @@
 }
 
 .news-source {
-  margin-right: 30rpx;
+  margin-right: 10rpx;
 }
 
 .news-time {
