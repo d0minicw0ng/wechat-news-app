@@ -1,0 +1,18 @@
+<view wx:hidden="{{!news}}">
+  <view class="news-title">{{news.title}}</view>
+  <view class="news-metadata">
+    <view class="news-source">{{news.source}}</view>
+    <view class="news-time">{{news.displayTime}}</view>
+    <view class="news-read-count">
+      <view class="new-read-count-left">阅读</view>
+      <view class="new-read-count-right">{{news.readCount}}</view>
+      </view>
+  </view>
+
+  <view class="news-container">
+    <view wx:for="{{news.content}}" wx:key="{{id}}">
+      <view class="news-paragraph" wx:if="{{item.type === 'p'}}">{{item.text}}</view>
+      <image class="news-paragraph-image" wx:if="{{item.type === 'image'}}" src="{{item.src}}"></image>
+    </view>
+  </view>
+</view>

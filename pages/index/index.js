@@ -46,5 +46,12 @@ Page({
     const selectedCategory = event.target.dataset.category;
     this.setData({ activeCategory: selectedCategory });
     this.getNews();
+  },
+
+  onTapNews(event) {
+    const selectedId = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/detail/detail?id=${selectedId}`,
+    });
   }
 })

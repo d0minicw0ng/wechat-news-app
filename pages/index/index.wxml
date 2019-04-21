@@ -6,7 +6,7 @@
   </view>
 </view>
 
-<view class="hottest-news" wx:hidden="{{!hottestNews}}">
+<view class="hottest-news" wx:hidden="{{!hottestNews}}" data-id="{{hottestNews.id}}" bindtap="onTapNews">
   <view class="hottest-news-tag">热门</view>
   <image class="hottest-news-image" src="{{hottestNews.firstImage}}"></image>
   <view class="hottest-news-title">{{hottestNews.title}}</view>
@@ -17,8 +17,13 @@
   </view>
 </view>
 
-<view class="news-list" wx:for="{{news}}" wx:key="{{id}}">
-  <view class="news-container">
+<view class="news-list">
+  <view class="news-container"
+    wx:for="{{news}}"
+    wx:key="{{id}}"
+    bindtap="onTapNews"
+    data-id="{{item.id}}">
+
     <view class="news-left">
       <view class="news-title">{{item.title}}</view>
 
