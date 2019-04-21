@@ -1,0 +1,35 @@
+<view class="categories">
+  <view wx:key="{{type}}" wx:for="{{categories}}">
+    <view class="category {{item.type === activeCategory ? 'active' : ''}}" bindtap="selectCategory" data-category="{{item.type}}">
+      {{item.name}}
+    </view>
+  </view>
+</view>
+
+<view class="hottest-news" wx:hidden="{{!hottestNews}}">
+  <view class="hottest-news-tag">热门</view>
+  <image class="hottest-news-image" src="{{hottestNews.firstImage}}"></image>
+  <view class="hottest-news-title">{{hottestNews.title}}</view>
+
+  <view class="hottest-news-metadata">
+    <view class="hottest-news-source">{{hottestNews.source}}</view>
+    <view class="hottest-news-time">{{hottestNews.displayTime}}</view>
+  </view>
+</view>
+
+<view class="news-list" wx:for="{{news}}" wx:key="{{id}}">
+  <view class="news-container">
+    <view class="news-left">
+      <view class="news-title">{{item.title}}</view>
+
+      <view class="news-metadata">
+        <view class="news-source">{{item.source}}</view>
+        <view class="news-time">{{item.displayTime}}</view>
+      </view>
+    </view>
+
+    <view class="news-right">
+      <image class="news-image" src="{{item.firstImage}}"></image>
+    </view>
+  </view>
+</view>
