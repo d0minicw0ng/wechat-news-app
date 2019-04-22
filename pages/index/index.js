@@ -31,13 +31,30 @@ Page({
         let news = res.data.result;
         news.forEach((newsItem) => {
           newsItem.displayTime = this.timeDisplay(newsItem.date);
+          this.setMissingNewsAttributes(newsItem);
         });
         const hottestNews = news.splice(0, 1)[0];
         this.setData({ hottestNews, news });
 
         callback && callback();
+      },
+
+      fail: err => {
+        wx.showToast({
+          title: '请求失败',
+        });
       }
     })
+  },
+
+  setMissingNewsAttributes(news) {
+    if (!news.firstImage) {
+      news.firstImage = "../../images/xinhua.png";
+    }
+
+    if (!news.source) {
+      news.source = "网络来源"
+    }
   },
 
   timeDisplay(datetime) {
