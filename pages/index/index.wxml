@@ -8,7 +8,7 @@
 
 <view class="hottest-news" wx:hidden="{{!hottestNews}}" data-id="{{hottestNews.id}}" bindtap="onTapNews">
   <view class="hottest-news-tag">热门</view>
-  <image class="hottest-news-image" src="{{hottestNews.firstImage}}"></image>
+  <image class="hottest-news-image" src="{{hottestNews.firstImage}}" mode="aspectFill"></image>
   <view class="hottest-news-title">{{hottestNews.title}}</view>
 
   <view class="hottest-news-metadata">
@@ -34,7 +34,7 @@
     </view>
 
     <view class="news-right">
-      <image class="news-image" src="{{item.firstImage}}"></image>
+      <image class="news-image" src="{{item.firstImage}}" mode="aspectFill"></image>
     </view>
   </view>
 </view>

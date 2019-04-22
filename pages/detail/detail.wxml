@@ -12,7 +12,7 @@
   <view class="news-container">
     <view wx:for="{{news.content}}" wx:key="{{id}}">
       <view class="news-paragraph" wx:if="{{item.type === 'p'}}">{{item.text}}</view>
-      <image class="news-paragraph-image" wx:if="{{item.type === 'image'}}" src="{{item.src}}"></image>
+      <image class="news-paragraph-image" wx:if="{{item.type === 'image'}}" src="{{item.src}}" mode="aspectFill"></image>
     </view>
   </view>
 </view>
